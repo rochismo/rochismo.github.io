@@ -57,11 +57,11 @@ function genEnemies(quantity) {
     for (var i = 0; i < quantity; i++) {
         var r = random(game.player.radius / 2, game.player.radius + game.player.radius / 2);
         var x = Math.random() < 0.50 ?
-            random(0, -window.innerWidth - game.handler.player.pos.x) - r :
-            random(game.handler.player.pos.x + window.innerWidth * 2, window.innerWidth + game.handler.player.pos.x) + r;
+            random(-r, (-game.handler.player.pos.x + -innerWidth / 2)) - r :
+            random((game.handler.player.pos.x + innerWidth / 2), ((innerWidth / 2) + game.handler.player.pos.x)) + r;
         var y = Math.random() < 0.50 ?
-            random(0, -window.innerHeight - game.handler.player.pos.y) - r :
-            random(game.handler.player.pos.y + window.innerHeight * 2, game.handler.player.pos.y + window.innerHeight) + r;
+            random(-r,  (-game.handler.player.pos.y + -innerHeight / 2)) - r :
+            random((game.handler.player.pos.y + innerHeight / 2), (game.handler.player.pos.y + (innerHeight / 2))) + r;
         game.enemies.push(new Enemy(x, y, r, game.handler));
     }
 }

@@ -24,11 +24,11 @@ function Enemy(x,y,r, handler) {
 
     this.getOutOfBounds = function () {
         if (this.initialPos.x < 0 && this.initialPos.y < 0) {
-            return this.pos.x > (window.innerWidth * 2) + this.handler.player.pos.x ||
-                this.pos.y > (window.innerHeight * 2) + this.handler.player.pos.y;
+            return this.pos.x > (innerWidth / 2) + this.handler.player.pos.x ||
+                this.pos.y > (innerHeight / 2) + this.handler.player.pos.y;
         } else {
-            return this.pos.x < (-window.innerWidth * 2) - this.handler.player.pos.x ||
-                this.pos.y < (-window.innerHeight * 2) - this.handler.player.pos.y;
+            return this.pos.x < this.handler.player.pos.x - (-innerWidth / 2) ||
+                this.pos.y < this.handler.player.pos.y - (-innerHeight / 2) ;
         }
     };
     this.stop = function(){

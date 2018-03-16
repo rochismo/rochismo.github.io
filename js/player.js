@@ -8,10 +8,9 @@ function Player(x, y, startingRadius) {
     this.scoreFontSize = 32;
 
     this.show = function () {
-        push();
         fill(this.color);
         ellipse(this.pos.x, this.pos.y, this.radius, this.radius);
-        pop();
+
     };
 
     this.update = function () {

@@ -45,8 +45,8 @@ function Handler(player, enemies) {
     this.displayDeadText = function () {
         textSize(this.scoreFontSize);
         fill(255);
-        var txt = "You died, press Space to play again";
-        text(txt, this.player.pos.x - (txt.length * 2), this.player.pos.y);
+        var txt = "You died, press Space to play again. Your score was: " + this.player.score;
+        text(txt, this.player.pos.x - ((innerWidth) - (txt.length * 2.5)) / 4, this.player.pos.y);
         game.enemies = [];
         game.player = null;
     };
